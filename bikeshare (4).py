@@ -97,7 +97,7 @@ def time_stats(df):
     print (df['day_of_week'].mode() [0] )
 
     # TO DO: display the most common start hour
-    print (df['hour'].mode() [0] )         
+    print (df['hour'].value_counts().index[0] )         
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -115,7 +115,7 @@ def station_stats(df):
 
 
     # TO DO: display most commonly used end station
-    print (df['End Station'].mode()[0])
+    print (df['End Station'].value_counts().index[0])
 
     # TO DO: display most frequent combination of start station and end station trip
     print (df.groupby(['Start Station' , 'End Station']) .size() .sort_values (ascending = False).index [0] )
